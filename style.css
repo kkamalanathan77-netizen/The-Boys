@@ -145,7 +145,18 @@ p {
     color: #ccc;
 }
 
-
+/* Coming Soon Style */
+.coming-soon {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222;
+    border-radius: 15px;
+    color: gold;
+    font-weight: bold;
+    font-size: 18px;
+}
 
 /* ================= BIRTHDAY SECTION ================= */
 
@@ -210,4 +221,3 @@ p {
     font-size: 18px;
     margin-top: 20px;
 }
-
