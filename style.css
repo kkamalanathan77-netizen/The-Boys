@@ -1,3 +1,4 @@
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +10,7 @@ body {
     color: white;
     font-family: Arial, sans-serif;
     text-align: center;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 /* ================= INTRO ================= */
@@ -36,18 +37,9 @@ body {
 }
 
 @keyframes logoAnimation {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.2);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+    0% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
 /* ================= MAIN CONTENT ================= */
@@ -55,64 +47,20 @@ body {
 .main-content {
     display: none;
     padding: 80px 20px;
-    animation: fadeInContent 1.5s ease forwards;
-}
-
-@keyframes fadeInContent {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }
 
 h2 {
-    font-size: 32px;
-    margin-bottom: 15px;
     color: gold;
+    margin-bottom: 30px;
 }
 
-p {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: #cccccc;
-}
-
-/* ================= GROUP PHOTO ================= */
-
-.group-photo {
-    width: 320px;
-    max-width: 90%;
-    border-radius: 20px;
-    margin-top: 25px;
-    box-shadow: 0 0 25px gold;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.group-photo:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 40px gold;
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 600px) {
-    .logo {
-        font-size: 40px;
-    }
-
-    h2 {
-        font-size: 24px;
-    }
-
-    p {
-        font-size: 16px;
-    }
-}
+/* ================= MEMBERS ================= */
 
 .members {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
-    margin-top: 40px;
 }
 
 .member-card {
@@ -121,12 +69,17 @@ p {
     border-radius: 15px;
     width: 220px;
     box-shadow: 0 0 15px gold;
-    transition: 0.4s;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .member-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 0 25px gold;
+}
+
+.member-card:active {
+    transform: scale(0.95);
 }
 
 .member-photo {
@@ -137,87 +90,64 @@ p {
 
 .member-card h3 {
     color: gold;
-    margin-bottom: 8px;
 }
 
-.member-card p {
-    font-size: 14px;
-    color: #ccc;
-}
+/* ================= MODAL ================= */
 
-/* Coming Soon Style */
-.coming-soon {
-    height: 200px;
-    display: flex;
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
     justify-content: center;
     align-items: center;
-    background: #222;
-    border-radius: 15px;
-    color: gold;
-    font-weight: bold;
-    font-size: 18px;
 }
 
-/* ================= BIRTHDAY SECTION ================= */
-
-.birthday-section {
-    margin-top: 60px;
-    padding: 40px 20px;
+.modal-content {
     background: #111;
+    padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 0 25px gold;
-    animation: glow 2s infinite alternate;
+    text-align: center;
+    width: 320px;
+    box-shadow: 0 0 30px gold;
+    animation: popup 0.4s ease;
+    position: relative;
 }
 
-.birthday-date {
+@keyframes popup {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-img {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    box-shadow: 0 0 20px gold;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
     font-size: 28px;
     color: gold;
-    font-weight: bold;
-    margin-top: 10px;
+    cursor: pointer;
 }
 
-.birthday-text {
-    margin-top: 10px;
-    color: #ccc;
-    font-size: 16px;
-}
+/* ================= RESPONSIVE ================= */
 
-/* Glow Animation */
-@keyframes glow {
-    from {
-        box-shadow: 0 0 15px gold;
+@media (max-width: 600px) {
+    .logo {
+        font-size: 40px;
     }
-    to {
-        box-shadow: 0 0 35px gold;
+
+    .members {
+        flex-direction: column;
+        align-items: center;
     }
-}
-
-/* ================= CREATION SECTION ================= */
-
-.creation-section {
-    margin-top: 60px;
-    padding: 40px 25px;
-    background: #111;
-    border-radius: 20px;
-    box-shadow: 0 0 25px gold;
-    text-align: center;
-}
-
-.creation-section h2 {
-    color: gold;
-    margin-bottom: 20px;
-}
-
-.creation-section p {
-    color: #ccc;
-    margin-bottom: 15px;
-    font-size: 16px;
-    line-height: 1.6;
-}
-
-.highlight-line {
-    color: gold;
-    font-weight: bold;
-    font-size: 18px;
-    margin-top: 20px;
 }
