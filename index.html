@@ -6,11 +6,6 @@
 </head>
 <body>
 
-<!-- Background Music -->
-<audio autoplay loop>
-    <source src="music.mp3" type="audio/mpeg">
-</audio>
-
 <!-- Intro Screen -->
 <div class="intro">
     <h1 class="logo">The Boys®</h1>
@@ -23,98 +18,46 @@
 
     <div class="members">
 
-        <!-- Face 1 -->
-        <div class="member-card" onclick="openProfile(
-        'images/face_1_left.jpg',
-        'N. Mithun Raj',
-        'The Smile King 😄',
-        'Always smiling and keeping the squad positive. Motivates everyone!'
-        )">
+        <div class="member-card">
             <img src="images/face_1_left.jpg" class="member-photo">
             <h3>N. Mithun Raj</h3>
+            <p>Fun Fact: The Smile King 😄</p>
         </div>
 
-        <!-- Face 2 -->
-        <div class="member-card" onclick="openProfile(
-        'images/face_2_front_right.jpg',
-        'K. Mithun',
-        'The Brainy One 🧠',
-        'Quiet but always thinking ahead. Solves problems smartly!'
-        )">
+        <div class="member-card">
             <img src="images/face_2_front_right.jpg" class="member-photo">
             <h3>K. Mithun</h3>
+            <p>Fun Fact: The Brainy One 🧠</p>
         </div>
 
-        <!-- Face 3 -->
-        <div class="member-card" onclick="openProfile(
-        'images/face_3.jpg',
-        'Face 3 Name',
-        'The Energy Booster ⚡',
-        'Brings vibe and power wherever he goes!'
-        )">
+        <div class="member-card">
             <img src="images/face_3.jpg" class="member-photo">
             <h3>Face 3 Name</h3>
+            <p>Fun Fact: The Energy Booster ⚡</p>
         </div>
 
-        <!-- Face 4 -->
-        <div class="member-card" onclick="openProfile(
-        'images/face_4_glasses_left.jpg',
-        'R.R. Sri Hari Raj',
-        'The Silent Power 💪',
-        'Calm face, strong mindset. Always focused!'
-        )">
+        <div class="member-card">
             <img src="images/face_4_glasses_left.jpg" class="member-photo">
             <h3>R.R. Sri Hari Raj</h3>
+            <p>Fun Fact: The Silent Power 💪</p>
         </div>
 
-        <!-- Face 5 -->
-        <div class="member-card" onclick="openProfile(
-        'images/face_5_back_glasses.jpg',
-        'R.R Sri Hari Raj',
-        'The Comeback King 🔥',
-        'Always ready for the next challenge!'
-        )">
+        <div class="member-card">
             <img src="images/face_5_back_glasses.jpg" class="member-photo">
             <h3>R.R Sri Hari Raj</h3>
+            <p>Fun Fact: The Comeback King 🔥</p>
         </div>
 
     </div>
 
 </div>
 
-<!-- POPUP MODAL -->
-<div id="profileModal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeProfile()">&times;</span>
-        <img id="modalImg" class="modal-img">
-        <h2 id="modalName"></h2>
-        <h4 id="modalTitle"></h4>
-        <p id="modalDesc"></p>
-    </div>
-</div>
-
-<!-- SCRIPT -->
 <script>
-
 setTimeout(() => {
     document.querySelector('.intro').style.opacity = "0";
     document.querySelector('.intro').style.visibility = "hidden";
     document.querySelector('.main-content').style.display = "block";
-    document.body.style.overflow = "auto";
 }, 3000);
-
-function openProfile(img, name, title, desc) {
-    document.getElementById("modalImg").src = img;
-    document.getElementById("modalName").innerText = name;
-    document.getElementById("modalTitle").innerText = title;
-    document.getElementById("modalDesc").innerText = desc;
-    document.getElementById("profileModal").style.display = "flex";
-}
-
-function closeProfile() {
-    document.getElementById("profileModal").style.display = "none";
-}
-
 </script>
 
 </body>
