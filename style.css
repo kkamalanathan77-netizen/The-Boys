@@ -5,14 +5,15 @@
 }
 
 body {
-    background: black;
+    background: linear-gradient(135deg, #000000, #111111);
     color: white;
     font-family: Arial, sans-serif;
     text-align: center;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
-/* Intro */
+/* ================= INTRO ================= */
+
 .intro {
     position: fixed;
     width: 100%;
@@ -21,41 +22,97 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
     transition: 1s ease;
 }
 
 .logo {
-    font-size: 60px;
+    font-size: 70px;
     color: gold;
+    letter-spacing: 3px;
     opacity: 0;
-    animation: fadeIn 2s forwards;
-    text-shadow: 0 0 20px gold;
+    animation: logoAnimation 2.5s forwards;
+    text-shadow: 0 0 20px gold, 0 0 40px gold;
 }
 
-@keyframes fadeIn {
-    to {
+@keyframes logoAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
         opacity: 1;
         transform: scale(1.2);
     }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
-/* Main Content */
+/* ================= MAIN CONTENT ================= */
+
 .main-content {
     display: none;
     padding: 80px 20px;
+    animation: fadeInContent 1.5s ease forwards;
+}
+
+@keyframes fadeInContent {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
     color: gold;
-    margin-bottom: 30px;
 }
 
-/* Members */
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #cccccc;
+}
+
+/* ================= GROUP PHOTO ================= */
+
+.group-photo {
+    width: 320px;
+    max-width: 90%;
+    border-radius: 20px;
+    margin-top: 25px;
+    box-shadow: 0 0 25px gold;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.group-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px gold;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 600px) {
+    .logo {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
 .members {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
+    margin-top: 40px;
 }
 
 .member-card {
@@ -64,11 +121,11 @@ h2 {
     border-radius: 15px;
     width: 220px;
     box-shadow: 0 0 15px gold;
-    transition: 0.3s;
+    transition: 0.4s;
 }
 
 .member-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
     box-shadow: 0 0 25px gold;
 }
 
@@ -80,4 +137,87 @@ h2 {
 
 .member-card h3 {
     color: gold;
+    margin-bottom: 8px;
+}
+
+.member-card p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Coming Soon Style */
+.coming-soon {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222;
+    border-radius: 15px;
+    color: gold;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* ================= BIRTHDAY SECTION ================= */
+
+.birthday-section {
+    margin-top: 60px;
+    padding: 40px 20px;
+    background: #111;
+    border-radius: 20px;
+    box-shadow: 0 0 25px gold;
+    animation: glow 2s infinite alternate;
+}
+
+.birthday-date {
+    font-size: 28px;
+    color: gold;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.birthday-text {
+    margin-top: 10px;
+    color: #ccc;
+    font-size: 16px;
+}
+
+/* Glow Animation */
+@keyframes glow {
+    from {
+        box-shadow: 0 0 15px gold;
+    }
+    to {
+        box-shadow: 0 0 35px gold;
+    }
+}
+
+/* ================= CREATION SECTION ================= */
+
+.creation-section {
+    margin-top: 60px;
+    padding: 40px 25px;
+    background: #111;
+    border-radius: 20px;
+    box-shadow: 0 0 25px gold;
+    text-align: center;
+}
+
+.creation-section h2 {
+    color: gold;
+    margin-bottom: 20px;
+}
+
+.creation-section p {
+    color: #ccc;
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.highlight-line {
+    color: gold;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px;
 }
