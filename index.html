@@ -7,7 +7,7 @@
 <body>
 
 <!-- Background Music -->
-<audio id="bg-music" autoplay loop>
+<audio autoplay loop>
     <source src="music.mp3" type="audio/mpeg">
 </audio>
 
@@ -16,112 +16,106 @@
     <h1 class="logo">The Boys®</h1>
 </div>
 
-<!-- Main Website -->
+<!-- Main Content -->
 <div class="main-content">
-    <h2>Welcome to The Boys® 😎</h2>
-    <p>Brothers by chance, Legends by choice.</p>
 
-    <!-- Group Photo -->
-    <img src="images/group.jpg" alt="The Boys Group Photo" class="group-photo">
+    <h2>👑 The Boys® Members</h2>
+
+    <div class="members">
+
+        <!-- Face 1 -->
+        <div class="member-card" onclick="openProfile(
+        'images/face_1_left.jpg',
+        'N. Mithun Raj',
+        'The Smile King 😄',
+        'Always smiling and keeping the squad positive. Motivates everyone!'
+        )">
+            <img src="images/face_1_left.jpg" class="member-photo">
+            <h3>N. Mithun Raj</h3>
+        </div>
+
+        <!-- Face 2 -->
+        <div class="member-card" onclick="openProfile(
+        'images/face_2_front_right.jpg',
+        'K. Mithun',
+        'The Brainy One 🧠',
+        'Quiet but always thinking ahead. Solves problems smartly!'
+        )">
+            <img src="images/face_2_front_right.jpg" class="member-photo">
+            <h3>K. Mithun</h3>
+        </div>
+
+        <!-- Face 3 -->
+        <div class="member-card" onclick="openProfile(
+        'images/face_3.jpg',
+        'Face 3 Name',
+        'The Energy Booster ⚡',
+        'Brings vibe and power wherever he goes!'
+        )">
+            <img src="images/face_3.jpg" class="member-photo">
+            <h3>Face 3 Name</h3>
+        </div>
+
+        <!-- Face 4 -->
+        <div class="member-card" onclick="openProfile(
+        'images/face_4_glasses_left.jpg',
+        'R.R. Sri Hari Raj',
+        'The Silent Power 💪',
+        'Calm face, strong mindset. Always focused!'
+        )">
+            <img src="images/face_4_glasses_left.jpg" class="member-photo">
+            <h3>R.R. Sri Hari Raj</h3>
+        </div>
+
+        <!-- Face 5 -->
+        <div class="member-card" onclick="openProfile(
+        'images/face_5_back_glasses.jpg',
+        'R.R Sri Hari Raj',
+        'The Comeback King 🔥',
+        'Always ready for the next challenge!'
+        )">
+            <img src="images/face_5_back_glasses.jpg" class="member-photo">
+            <h3>R.R Sri Hari Raj</h3>
+        </div>
+
+    </div>
+
 </div>
 
+<!-- POPUP MODAL -->
+<div id="profileModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeProfile()">&times;</span>
+        <img id="modalImg" class="modal-img">
+        <h2 id="modalName"></h2>
+        <h4 id="modalTitle"></h4>
+        <p id="modalDesc"></p>
+    </div>
+</div>
+
+<!-- SCRIPT -->
 <script>
-    // Hide intro after 3 seconds
-    setTimeout(() => {
-        document.querySelector('.intro').style.opacity = "0";
-        document.querySelector('.intro').style.visibility = "hidden";
-        document.querySelector('.main-content').style.display = "block";
-        document.body.style.overflow = "auto";
-    }, 3000);
+
+setTimeout(() => {
+    document.querySelector('.intro').style.opacity = "0";
+    document.querySelector('.intro').style.visibility = "hidden";
+    document.querySelector('.main-content').style.display = "block";
+    document.body.style.overflow = "auto";
+}, 3000);
+
+function openProfile(img, name, title, desc) {
+    document.getElementById("modalImg").src = img;
+    document.getElementById("modalName").innerText = name;
+    document.getElementById("modalTitle").innerText = title;
+    document.getElementById("modalDesc").innerText = desc;
+    document.getElementById("profileModal").style.display = "flex";
+}
+
+function closeProfile() {
+    document.getElementById("profileModal").style.display = "none";
+}
+
 </script>
 
 </body>
 </html>
-
-<h2>👑 The Boys® Members</h2>
-
-<div class="members">
-
-    <!-- Face 1 -->
-    <div class="member-card">
-        <img src="images/face_1_left.jpg" class="member-photo">
-
-        <h3>N. Mithun Raj</h3>
-        <p>Fun Fact: The Smile King 😄 – Always smiling and keeping the squad positive!</p>
-    </div>
-
-    <!-- Face 2 -->
-    <div class="member-card">
-     <img src="images/face_2_front_right.jpg" class="member-photo">
-                <h3>K. Mithun</h3>
-        <p>Fun Fact: The Brainy One 🧠 – Quiet but always thinking 10 steps ahead.</p>
-    </div>
-    <!--Face 3-->
-    <div class="member-card">
-    <img src="face_3.jpg" class="member-photo">
-    <h3>S.K.Vikneshara</h3>
-    <p>Fun Fact: The Energy Booster ⚡ – Brings vibe and power wherever he goes!</p>
-</div>
- 
-    <!-- Face 4 -->
-    <div class="member-card">
-        <img src="images/face_4_glasses_left.jpg" class="member-photo">
-        <h3>R.R. Sri Hari Raj</h3>
-        <p>Fun Fact: The Silent Power 💪 – Calm face, strong mindset.</p>
-    </div>
-
-    <!-- Face 5 -->
-    <div class="member-card">
-       <img src="images/face_5_back_glasses.jpg" class="member-photo">
-        <h3>R.R Sri Adithyas Raj</h3>
-        <p>Fun Fact: The Comeback King 🔥 – Always ready for the next challenge!</p>
-    </div>
-
-</div>
-
-<!-- Group Birthday Section -->
-<div class="birthday-section">
-    <h2>🎉 The Boys® Birthday</h2>
-    <p class="birthday-date">8 / 6 / 25</p>
-    <p class="birthday-text">The day legends were officially formed 💪🔥</p>
-</div>
-
-<!-- How It Was Created Section -->
-<div class="creation-section">
-    <h2>💫 How The Boys® Was Created</h2>
-
-    <p>
-        It all started on a special day in our school. For Independence Day, 
-        our school mam conducted a dance program and selected some members 
-        from our class to perform.
-    </p>
-
-    <p>
-        That practice session brought us together. We laughed, we worked hard, 
-        we supported each other, and slowly we became more than just classmates.
-    </p>
-
-    <p>
-        On that day, something special happened — we became best friends.
-        From that moment, we decided to create our own group and proudly named it 
-        <strong>The Boys®</strong>.
-    </p>
-
-    <p>
-        Our group always keeps us joyful, united, and strong. 
-        We study together, laugh together, solve problems together, 
-        and stand by each other no matter what.
-    </p>
-
-    <p>
-        From that Independence Day to this very day, our bond has only grown stronger.
-        We are not just friends — we are a team, a family, and brothers forever.
-    </p>
-
-    <p class="highlight-line">
-        And this is just the beginning of The Boys® journey... 🚀🔥
-    </p>
-</div>
-
-
-
